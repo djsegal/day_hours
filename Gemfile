@@ -4,6 +4,8 @@ source 'https://rubygems.org'
 
 group :development, :test do
   gem 'annotate', '~> 2.6.6'
+  gem 'jazz_hands', github: 'nixme/jazz_hands', branch: 'bring-your-own-debugger'
+  gem 'pry-byebug'
 end
 
 # ---- added by djs ----
