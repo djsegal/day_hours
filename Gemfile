@@ -1,5 +1,13 @@
 source 'https://rubygems.org'
 
+# ---- added by djs ----
+
+group :development, :test do
+  gem 'annotate', '~> 2.6.6'
+end
+
+# ---- added by djs ----
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
