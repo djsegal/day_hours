@@ -10,6 +10,8 @@
 
 class City < ActiveRecord::Base
 
+  has_many :venues
+
   validates :time_zone, presence: true
 
 end

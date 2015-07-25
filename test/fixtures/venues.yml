@@ -1,0 +1,36 @@
+# == Schema Information
+#
+# Table name: venues
+#
+#  id         :integer          not null, primary key
+#  name       :string
+#  city_id    :integer
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+# Indexes
+#
+#  index_venues_on_city_id  (city_id)
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+normal_hours:
+  name: 'Chipotle'
+  city: london
+
+all_day:
+  name: '24 Hour Diner'
+  city: london
+
+two_times:
+  name: 'Brunch & Dinner'
+  city: london
+
+extended_hours:
+  name: 'Bar & Grill'
+  city: london
+
+late_night:
+  name: 'Pub'
+  city: london
