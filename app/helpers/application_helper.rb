@@ -1,18 +1,22 @@
 module ApplicationHelper
 
+  def available?(venue, day, time)
+    time_zone = venue.city.time_zone
+    datetime = transform_to_datetime(day, time, time_zone)
+    venue.check_availability(datetime)
+  end
+
   extend Memoist
-  def transform_to_datetime(day, time, timezone)
-    date = Date.commercial(
+  def transform_to_datetime(day, time, time_zone)
+    date_and_time  = Date.commercial(
       Date.today.year,
       Date.today.cwday.modulo(4)+Date.today.cweek,
       Date::DAYNAMES.index(day)
-    ).strftime("%m-%d-%Y")
+    ).to_s
+    date_and_time += ' '
+    date_and_time += Tod::TimeOfDay.try_parse(time).to_s
 
-    time = Tod::TimeOfDay.try_parse(time).to_s
-
-    date_and_time = [date, time, timezone].join ' '
-    datetime_format = '%m-%d-%Y %H:%M:%S %Z'
-    DateTime.strptime(date_and_time,datetime_format)
+    ActiveSupport::TimeZone[time_zone].parse(date_and_time)
   end
   memoize :transform_to_datetime
 
