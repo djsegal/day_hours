@@ -12,6 +12,7 @@ end
 
 gem 'tod'
 gem "twitter-bootstrap-rails"
+gem 'memoist'
 
 # ---- added by djs ----
 
