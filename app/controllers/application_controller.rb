@@ -5,7 +5,8 @@ class ApplicationController < ActionController::Base
 
   def index
     @days = [ 'Thursday', 'Friday', 'Saturday' ]
-    @times = [ '12am', '6am', '12pm', '6pm' ]
+    @times = (0..11).step(1).map{ |i| "#{(11+i)%12+1}am" }
+    @times = @times + @times.map{ |t| t.sub('a','p') }
     @venues = Venue.all
   end
 end

@@ -3,14 +3,27 @@
 <table id='dayHours' class='display'>
 
   <thead>
-    <th class='firstColumn'> Venue </th>
-    <% @days.each do |day| %>
-      <% @times.each do |time| %>
-        <th>
-          <%= [day, time].join ' @ ' %>
+    <tr>
+      <th class='firstColumn oddHeaderColumn' rowspan='2'>
+        Venue
+      </th>
+      <% @days.each_with_index do |day, i| %>
+        <% day_class = (i%2).zero? ? 'evenHeaderColumn' : 'oddHeaderColumn' %>
+        <th class='<%= day_class %>' colspan='<%= @times.count %>'>
+          <%= day %>
         </th>
       <% end %>
-    <% end %>
+    </tr>
+    <tr>
+      <% @days.each_with_index do |day, i| %>
+        <% day_class = (i%2).zero? ? 'evenHeaderColumn' : 'oddHeaderColumn' %>
+        <% @times.each do |time| %>
+          <th class='<%= day_class %>'>
+            <%= time %>
+          </th>
+        <% end %>
+      <% end %>
+    </tr>
   </thead>
 
   <tbody>

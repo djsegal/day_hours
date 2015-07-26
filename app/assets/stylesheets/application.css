@@ -18,6 +18,13 @@
 
 .col-sm-12 {
   overflow: scroll;
+  border: 5px solid cornflowerblue;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+#dayHours {
+  margin: 0 !important;
 }
 
 .yes {
@@ -42,4 +49,32 @@
 
 .col-sm-7 {
   display: none;
+}
+
+th {
+  text-align: center;
+}
+
+.evenHeaderColumn {
+  background-color: lemonchiffon;
+}
+
+.oddHeaderColumn {
+  background-color: coral;
+}
+
+table.dataTable thead .sorting:after {
+  opacity: 0;
+}
+
+table.dataTable thead .sorting_asc:after {
+  opacity: 0;
+}
+
+table.dataTable thead .sorting_desc:after {
+  opacity: 0;
+}
+
+.firstColumn.oddHeaderColumn {
+  font-size: large;
 }
