@@ -1,0 +1,60 @@
+# == Schema Information
+#
+# Table name: day_hours
+#
+#  id           :integer          not null, primary key
+#  day          :string
+#  opening_time :string
+#  closing_time :string
+#  venue_id     :integer
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#
+# Indexes
+#
+#  index_day_hours_on_venue_id  (venue_id)
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+normal_weekday:
+  day: weekday
+  opening_time: '10am'
+  closing_time: '10pm'
+  venue: normal_hours
+
+normal_weekend:
+  day: weekend
+  opening_time: ' 9am'
+  closing_time: '11pm'
+  venue: normal_hours
+
+all_day_default:
+  day: default
+  opening_time: 'midnight'
+  closing_time: '23:59:59'
+  venue: all_day
+
+saturday_brunch:
+  day: saturday
+  opening_time: '10am'
+  closing_time: ' 2pm'
+  venue: two_times
+
+saturday_dinner:
+  day: saturday
+  opening_time: ' 5pm'
+  closing_time: ' 9pm'
+  venue: two_times
+
+extended_default:
+  day: default
+  opening_time: '10am'
+  closing_time: ' 2am'
+  venue: extended_hours
+
+extended_default:
+  day: default
+  opening_time: ' 6pm'
+  closing_time: ' 4am'
+  venue: late_night

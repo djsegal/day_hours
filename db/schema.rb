@@ -11,13 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150725214823) do
+ActiveRecord::Schema.define(version: 20150725225438) do
 
   create_table "cities", force: :cascade do |t|
     t.string   "time_zone"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "day_hours", force: :cascade do |t|
+    t.string   "day"
+    t.string   "opening_time"
+    t.string   "closing_time"
+    t.integer  "venue_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "day_hours", ["venue_id"], name: "index_day_hours_on_venue_id"
 
   create_table "venues", force: :cascade do |t|
     t.string   "name"

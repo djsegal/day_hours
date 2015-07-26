@@ -16,6 +16,7 @@
 class Venue < ActiveRecord::Base
 
   belongs_to :city
+  has_many :day_hours
 
   validates :city, presence: true
   validates :name, presence: true
