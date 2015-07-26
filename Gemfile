@@ -13,6 +13,8 @@ end
 gem 'tod'
 gem "twitter-bootstrap-rails"
 gem 'memoist'
+gem 'jquery-datatables-rails'
+gem 'jquery-ui-rails'
 
 # ---- added by djs ----
 

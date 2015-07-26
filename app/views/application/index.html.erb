@@ -1,8 +1,9 @@
 <h1> Day Hours </h1>
 
-<table id='results' class='display'>
+<table id='dayHours' class='display'>
+
   <thead>
-    <th> Venue </th>
+    <th class='firstColumn'> Venue </th>
     <% @days.each do |day| %>
       <% @times.each do |time| %>
         <th>
@@ -15,7 +16,7 @@
   <tbody>
     <% @venues.each do |venue| %>
       <tr>
-        <td>
+        <td class='firstColumn'>
           <%= venue.name %>
         </td>
 
@@ -34,4 +35,5 @@
       </tr>
     <% end %>
   </tbody>
+
 </table>

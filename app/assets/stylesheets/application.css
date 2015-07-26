@@ -11,5 +11,35 @@
  * file per style scope.
  *
  *= require_tree .
+ *= require dataTables/src/demo_table_jui
+ *= require dataTables/bootstrap/3/jquery.dataTables.bootstrap
  *= require_self
  */
+
+.col-sm-12 {
+  overflow: scroll;
+}
+
+.yes {
+  color: limegreen;
+}
+
+.no {
+  color: tomato;
+}
+
+.firstColumn {
+  white-space: nowrap;
+}
+
+.col-sm-5 {
+  display: none;
+}
+
+.col-sm-6 {
+  display: none;
+}
+
+.col-sm-7 {
+  display: none;
+}
