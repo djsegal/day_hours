@@ -11,6 +11,7 @@ group :development, :test do
 end
 
 gem 'tod'
+gem "twitter-bootstrap-rails"
 
 # ---- added by djs ----
 
