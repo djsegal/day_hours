@@ -91,8 +91,12 @@ class Venue < ActiveRecord::Base
       (number_of_times-1..0).each do |i|
         friendly_opening_time = Tod::TimeOfDay.try_parse(opening_times[i])
         friendly_closing_time = Tod::TimeOfDay.try_parse(closing_times[i])
-        next unless friendly_closing_time <= friendly_opening_time
-        opening_times[i] = '00:00:00'
+        if friendly_closing_time <= friendly_opening_time
+          opening_times[i] = '00:00:00'
+        else
+          opening_times.delete_at(i)
+          closing_times.delete_at(i)
+        end
       end
     end
 
