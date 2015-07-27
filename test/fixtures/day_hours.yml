@@ -53,7 +53,7 @@ extended_default:
   closing_time: ' 2am'
   venue: extended_hours
 
-extended_default:
+late_night_default:
   day: default
   opening_time: ' 6pm'
   closing_time: ' 4am'
