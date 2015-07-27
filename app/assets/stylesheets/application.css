@@ -35,6 +35,10 @@ body > nav > h1 {
   display: inline-flex;
 }
 
+tr {
+  height: 40px;
+}
+
 .nav-button {
   float: right;
 }
