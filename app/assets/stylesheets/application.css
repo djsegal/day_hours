@@ -26,6 +26,8 @@ body > nav > h1 {
 
 .day-hours-navbar {
   padding: 20px 0;
+  color: whitesmoke;
+  background-color: slategrey;
 }
 
 .col-sm-12 {
