@@ -17,6 +17,9 @@
  *= require bootstrap-modal
  *= require_self
  */
+a {
+  outline:none !important;
+}
 
 img {
   width: 100%;
