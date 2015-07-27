@@ -1,0 +1,17 @@
+<nav class="navbar navbar-default navbar-fixed-top day-hours-navbar">
+
+  <h1 class='app-name'>
+    <a> Day Hours </a>
+  </h1>
+
+  <h1 class='nav-button'>
+    <%= link_to new_day_hour_path, data: { toggle: "modal", target: "#ajax-modal" } do %>
+      +
+    <% end %>
+  </h1>
+
+  <h1 class='nav-button'>
+    <%= link_to destroy_all_day_hours_path, :method => :delete do %> – <% end %>
+  </h1>
+
+</nav>

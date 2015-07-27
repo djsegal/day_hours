@@ -44,7 +44,10 @@
       <tr>
 
         <td class='firstColumn'>
+          <% isNewPlace = venue.name == 'New Place' %>
+          <% if isNewPlace %> <b> <% end %>
           <%= venue.name %>
+          <% if isNewPlace %> </b> <% end %>
         </td>
 
         <% @times.each do |time| %>

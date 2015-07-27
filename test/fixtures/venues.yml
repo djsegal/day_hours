@@ -34,3 +34,7 @@ extended_hours:
 late_night:
   name: 'Pub'
   city: london
+
+new_place:
+  name: 'New Place'
+  city: london

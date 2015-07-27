@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Venue:</strong>
+  <%= @day_hour.venue %>
+</p>
+
+<p>
+  <strong>Opening time:</strong>
+  <%= @day_hour.opening_time %>
+</p>
+
+<p>
+  <strong>Closing time:</strong>
+  <%= @day_hour.closing_time %>
+</p>
+
+<p>
+  <strong>Day:</strong>
+  <%= @day_hour.day %>
+</p>
+
+<%= link_to 'Edit', edit_day_hour_path(@day_hour) %> |
+<%= link_to 'Back', day_hours_path %>

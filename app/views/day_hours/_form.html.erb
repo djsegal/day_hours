@@ -1,0 +1,33 @@
+<%= form_for(@day_hour) do |f| %>
+  <% if @day_hour.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@day_hour.errors.count, "error") %> prohibited this day_hour from being saved:</h2>
+
+      <ul>
+      <% @day_hour.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <% venue = Venue.find_by(name: 'New Place') %>
+    <%= f.hidden_field :venue_id, value: venue.id %>
+  </div>
+  <div class="field">
+    <%= f.label :opening_time %><br>
+    <%= f.time_field :opening_time, value: Time.parse('10am').strftime('%T.%L') %>
+  </div>
+  <div class="field">
+    <%= f.label :closing_time %><br>
+    <%= f.time_field :closing_time, value: Time.parse('10pm').strftime('%T.%L') %>
+  </div>
+  <div class="field">
+    <%= f.label :day %><br>
+    <%= f.select :day, @days %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
