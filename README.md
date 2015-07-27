@@ -7,7 +7,7 @@
 -------------
 
 * Fun little app that checks if a venue's open anywhere around the world
-* Hosted at: [day-hours.herokuapp.com](day-hours.herokuapp.com)
+* Hosted at: [day-hours.herokuapp.com](http://day-hours.herokuapp.com/)
 
 -------------
 
