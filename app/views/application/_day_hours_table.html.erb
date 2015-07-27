@@ -1,0 +1,68 @@
+<h2> <%= Date::DAYNAMES[day] %> </h2>
+
+<br>
+
+<table id='dayHours-<%= day %>' class='display'>
+
+  <thead>
+
+    <tr>
+
+      <th class='firstColumn oddHeaderColumn' rowspan='2'>
+        Venue
+      </th>
+
+      <th class='evenHeaderColumn' colspan='<%= @times.count / 2 %>'>
+        <%= Date::DAYNAMES[day] %> Morning
+      </th>
+
+      <th class='oddHeaderColumn' colspan='<%= @times.count / 2 %>'>
+        <%= Date::DAYNAMES[day] %> Night
+      </th>
+
+    </tr>
+
+    <tr>
+
+      <% @times.each_with_index do |time, i| %>
+        <% column_class = i < @times.count / 2 ? \
+          'evenHeaderColumn' : 'oddHeaderColumn'
+        %>
+        <th class='<%= column_class %>'>
+          <%= time %>
+        </th>
+      <% end %>
+
+    </tr>
+
+  </thead>
+
+  <tbody>
+
+    <% @venues.each do |venue| %>
+
+      <tr>
+
+        <td class='firstColumn'>
+          <%= venue.name %>
+        </td>
+
+        <% @times.each do |time| %>
+
+          <td>
+            <% if available? venue, day, time %>
+              <span class='yes'> &#x2714 </span>
+            <% else %>
+              <span class='no' > &#x2718 </span>
+            <% end %>
+          </td>
+
+        <% end %>
+
+      </tr>
+
+    <% end %>
+
+  </tbody>
+
+</table>

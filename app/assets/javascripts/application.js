@@ -15,13 +15,6 @@
 //= require twitter/bootstrap
 //= require dataTables/jquery.dataTables
 //= require dataTables/bootstrap/3/jquery.dataTables.bootstrap
+//= require dataTables/extras/dataTables.fixedColumns
 //= require turbolinks
 //= require_tree .
-
-jQuery(function() {
-
-  $('#dayHours').DataTable({
-    pagingType: 'full_numbers',
-  });
-
-});

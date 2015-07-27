@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def index
-    @days = [ 'Thursday', 'Friday', 'Saturday' ]
+    @days = [*4..6] + [*0..3]
     @times = (0..11).step(1).map{ |i| "#{(11+i)%12+1}am" }
     @times = @times + @times.map{ |t| t.sub('a','p') }
     @venues = Venue.all

@@ -16,14 +16,26 @@
  *= require_self
  */
 
-.col-sm-12 {
-  overflow: scroll;
-  border: 5px solid cornflowerblue;
-  box-sizing: border-box;
-  padding: 0;
+body {
+  margin-top: 60px;
 }
 
-#dayHours {
+body > nav > h1 {
+  margin: 0;
+}
+
+.day-hours-navbar {
+  padding: 20px 0;
+}
+
+.col-sm-12 {
+  border: 5px solid cornflowerblue;
+  padding: 0;
+  width: 85%;
+  margin: 0 7.5%;
+}
+
+table.dataTable {
   margin: 0 !important;
 }
 

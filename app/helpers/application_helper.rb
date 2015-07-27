@@ -11,7 +11,7 @@ module ApplicationHelper
     date_and_time  = Date.commercial(
       Date.today.year,
       Date.today.cwday.modulo(4)+Date.today.cweek,
-      Date::DAYNAMES.index(day)
+      day+1
     ).to_s
     date_and_time += ' '
     date_and_time += Tod::TimeOfDay.try_parse(time).to_s

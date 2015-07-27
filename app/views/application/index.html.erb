@@ -1,52 +1,24 @@
-<h1> Day Hours </h1>
+<nav class="navbar navbar-default navbar-fixed-top day-hours-navbar">
+  <h1> Day Hours </h1>
+</nav>
 
-<table id='dayHours' class='display'>
+<% @days.each do |day| %>
 
-  <thead>
-    <tr>
-      <th class='firstColumn oddHeaderColumn' rowspan='2'>
-        Venue
-      </th>
-      <% @days.each_with_index do |day, i| %>
-        <% day_class = (i%2).zero? ? 'evenHeaderColumn' : 'oddHeaderColumn' %>
-        <th class='<%= day_class %>' colspan='<%= @times.count %>'>
-          <%= day %>
-        </th>
-      <% end %>
-    </tr>
-    <tr>
-      <% @days.each_with_index do |day, i| %>
-        <% day_class = (i%2).zero? ? 'evenHeaderColumn' : 'oddHeaderColumn' %>
-        <% @times.each do |time| %>
-          <th class='<%= day_class %>'>
-            <%= time %>
-          </th>
-        <% end %>
-      <% end %>
-    </tr>
-  </thead>
+  <div class="center jumbotron">
+    <%= render partial: 'day_hours_table', locals: {day: day} %>
+  </div>
 
-  <tbody>
-    <% @venues.each do |venue| %>
-      <tr>
-        <td class='firstColumn'>
-          <%= venue.name %>
-        </td>
+  <script>
 
-        <% @days.each do |day| %>
-          <% @times.each do |time| %>
-            <td>
-              <% if available? venue, day, time %>
-                <span class='yes'> &#x2714 </span>
-              <% else %>
-                <span class='no' > &#x2718 </span>
-              <% end %>
-            </td>
-          <% end %>
-        <% end %>
+    var table = $('#dayHours-<%= day %>').DataTable( {
+        "scrollY": "300px",
+        "scrollX": "100%",
+        "scrollCollapse": true,
+        "paging": false
+    } );
+    new $.fn.dataTable.FixedColumns( table );
 
-      </tr>
-    <% end %>
-  </tbody>
+  </script>
 
-</table>
+<% end %>
+
