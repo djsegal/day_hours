@@ -18,6 +18,10 @@
  *= require_self
  */
 
+img {
+  width: 100%;
+}
+
 #ajax-modal {
   height: 70% !important;
   width: 70% !important;
