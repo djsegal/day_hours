@@ -21,7 +21,7 @@ class DayHoursControllerTest < ActionController::TestCase
       post :create, day_hour: { closing_time: @day_hour.closing_time, day: @day_hour.day, opening_time: @day_hour.opening_time, venue_id: @day_hour.venue_id }
     end
 
-    assert_redirected_to day_hour_path(assigns(:day_hour))
+    assert_redirected_to root_path
   end
 
   test "should show day_hour" do

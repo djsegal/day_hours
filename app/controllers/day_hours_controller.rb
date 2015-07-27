@@ -14,7 +14,6 @@ class DayHoursController < ApplicationController
 
   # GET /day_hours/new
   def new
-    @days = [ 'Default', 'Weekdays', 'Weekends' ] + Date::DAYNAMES
     @day_hour = DayHour.new
   end
 

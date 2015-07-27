@@ -17,6 +17,8 @@
 
 class DayHour < ActiveRecord::Base
 
+  DAYNAMES = Date::DAYNAMES + [ 'Default', 'Weekdays', 'Weekends' ]
+
   belongs_to :venue
 
   validates :day, presence: true

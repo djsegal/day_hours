@@ -25,7 +25,7 @@
   </div>
   <div class="field">
     <%= f.label :day %><br>
-    <%= f.select :day, @days %>
+    <%= f.select :day, DayHour::DAYNAMES %>
   </div>
   <div class="actions">
     <%= f.submit %>
