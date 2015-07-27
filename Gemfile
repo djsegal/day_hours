@@ -19,6 +19,7 @@ gem "twitter-bootstrap-rails"
 gem 'memoist'
 gem 'jquery-datatables-rails'
 gem 'jquery-ui-rails'
+gem 'bootstrap-modal-rails'
 
 group :production do
   gem 'pg',             '0.17.1'
